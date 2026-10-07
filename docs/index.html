@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Status — srlorenzos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #0b0d12; --panel: #12161f; --line: #1e2430; --fg: #e8ecf3; --muted: #7d879a; --up: #2fd17c; --slow: #f5b642; --down: #ff5d5d; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: Sora, "Segoe UI", system-ui, sans-serif; }
+main { max-width: 820px; margin: 0 auto; padding: 48px 16px 64px; display: grid; gap: 28px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font: 600 12px/1 "JetBrains Mono", ui-monospace, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-size: clamp(28px, 5vw, 40px); text-wrap: balance; }
+.banner { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 12px; background: var(--panel); border-left: 4px solid var(--up); }
+.banner.bad { border-left-color: var(--down); }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--up); box-shadow: 0 0 0 4px rgba(47, 209, 124, .15); flex: none; }
+.bad .dot, .dot.down { background: var(--down); box-shadow: 0 0 0 4px rgba(255, 93, 93, .15); }
+.dot.slow { background: var(--slow); box-shadow: 0 0 0 4px rgba(245, 182, 66, .15); }
+.list { display: grid; gap: 1px; background: var(--line); border-radius: 12px; overflow: hidden; }
+.row { background: var(--panel); padding: 16px 18px; display: grid; gap: 10px; }
+.top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.name { font-weight: 700; min-width: 0; }
+.url { color: var(--muted); font: 12px "JetBrains Mono", ui-monospace, monospace; overflow-wrap: anywhere; }
+.stats { margin-left: auto; display: flex; gap: 16px; font: 13px "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; color: var(--muted); }
+.stats b { color: var(--fg); font-weight: 600; }
+.bars { display: flex; gap: 2px; height: 28px; align-items: flex-end; }
+.bars i { flex: 1; min-width: 2px; border-radius: 2px; background: var(--up); opacity: .85; }
+.bars i.down { background: var(--down); height: 100% !important; }
+.bars i.slow { background: var(--slow); }
+.legend { display: flex; justify-content: space-between; color: var(--muted); font: 11px "JetBrains Mono", ui-monospace, monospace; }
+footer { color: var(--muted); font-size: 13px; }
+footer a { color: var(--fg); }
+@media (prefers-reduced-motion: no-preference) { .dot { animation: pulse 2.4s ease-in-out infinite; } @keyframes pulse { 50% { box-shadow: 0 0 0 7px rgba(47, 209, 124, 0); } } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="eyebrow">status-sentinela</span>
+    <h1>Status dos serviços</h1>
+  </header>
+  <div class="banner" id="banner"><span class="dot"></span><span id="bannerText">Carregando…</span></div>
+  <section class="list" id="list" aria-live="polite"></section>
+  <footer>Checagem automática a cada hora pelo GitHub Actions · <span id="when"></span> · <a href="https://github.com/srlorenzos/status-sentinela">código</a></footer>
+</main>
+<script>
+const fmt = (iso) => new Date(iso).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+fetch('status.json', { cache: 'no-store' }).then((r) => r.json()).then((d) => {
+  const banner = document.getElementById('banner');
+  const down = d.sites.filter((s) => !s.up);
+  banner.classList.toggle('bad', down.length > 0);
+  document.getElementById('bannerText').textContent = down.length ? `${down.length} serviço(s) fora do ar` : 'Todos os serviços no ar';
+  document.getElementById('when').textContent = 'última checagem ' + fmt(d.atualizado);
+  const list = document.getElementById('list');
+  const maxMs = Math.max(...d.sites.flatMap((s) => s.historico.map((h) => h.ms)), 1);
+  for (const s of d.sites) {
+    const row = document.createElement('article');
+    row.className = 'row';
+    const top = document.createElement('div'); top.className = 'top';
+    const dot = document.createElement('span'); dot.className = 'dot' + (s.up ? (s.slow ? ' slow' : '') : ' down');
+    const name = document.createElement('div');
+    const n = document.createElement('div'); n.className = 'name'; n.textContent = s.nome;
+    const u = document.createElement('div'); u.className = 'url'; u.textContent = s.url;
+    name.append(n, u);
+    const stats = document.createElement('div'); stats.className = 'stats';
+    stats.innerHTML = `<span><b>${s.uptime.toFixed(1)}%</b> no ar</span><span><b>${s.ms}</b> ms</span>`;
+    top.append(dot, name, stats);
+    const bars = document.createElement('div'); bars.className = 'bars';
+    for (const h of s.historico.slice(-60)) {
+      const b = document.createElement('i');
+      b.style.height = Math.max(12, Math.round((h.ms / maxMs) * 100)) + '%';
+      if (!h.up) b.className = 'down'; else if (h.ms > 2500) b.className = 'slow';
+      b.title = `${fmt(h.t)} · ${h.up ? h.ms + ' ms' : 'fora do ar'}`;
+      bars.append(b);
+    }
+    const legend = document.createElement('div'); legend.className = 'legend';
+    legend.innerHTML = `<span>${s.historico.length > 1 ? fmt(s.historico[Math.max(0, s.historico.length - 60)].t) : ''}</span><span>agora</span>`;
+    row.append(top, bars, legend);
+    list.append(row);
+  }
+}).catch(() => { document.getElementById('bannerText').textContent = 'Ainda não há checagens registradas.'; });
+</script>
+</body>
+</html>
