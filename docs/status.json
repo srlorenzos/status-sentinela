@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-10-31T12:32:31.530Z",
+  "atualizado": "2026-10-31T17:44:35.937Z",
   "todosNoAr": false,
   "sites": [
     {
@@ -7,7 +7,7 @@
       "url": "https://horda-infinita.netlify.app/",
       "up": false,
       "code": 503,
-      "ms": 422,
+      "ms": 412,
       "slow": false,
       "uptime": 9.8,
       "historico": [
@@ -620,6 +620,11 @@
           "t": "2026-10-31T12:32:31.530Z",
           "up": false,
           "ms": 422
+        },
+        {
+          "t": "2026-10-31T17:44:35.937Z",
+          "up": false,
+          "ms": 412
         }
       ]
     },
@@ -1241,6 +1246,11 @@
           "t": "2026-10-31T12:32:31.530Z",
           "up": false,
           "ms": 108
+        },
+        {
+          "t": "2026-10-31T17:44:35.937Z",
+          "up": false,
+          "ms": 108
         }
       ]
     },
@@ -1249,7 +1259,7 @@
       "url": "https://github.com/srlorenzos/horda-infinita",
       "up": true,
       "code": 200,
-      "ms": 590,
+      "ms": 605,
       "slow": false,
       "uptime": 100,
       "historico": [
@@ -1862,6 +1872,11 @@
           "t": "2026-10-31T12:32:31.530Z",
           "up": true,
           "ms": 590
+        },
+        {
+          "t": "2026-10-31T17:44:35.937Z",
+          "up": true,
+          "ms": 605
         }
       ]
     },
@@ -1870,7 +1885,7 @@
       "url": "https://github.com/",
       "up": true,
       "code": 200,
-      "ms": 108,
+      "ms": 126,
       "slow": false,
       "uptime": 100,
       "historico": [
@@ -2483,6 +2498,11 @@
           "t": "2026-10-31T12:32:31.530Z",
           "up": true,
           "ms": 108
+        },
+        {
+          "t": "2026-10-31T17:44:35.937Z",
+          "up": true,
+          "ms": 126
         }
       ]
     }
