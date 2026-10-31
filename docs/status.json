@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-10-31T05:43:07.026Z",
+  "atualizado": "2026-10-31T12:32:31.530Z",
   "todosNoAr": false,
   "sites": [
     {
@@ -7,9 +7,9 @@
       "url": "https://horda-infinita.netlify.app/",
       "up": false,
       "code": 503,
-      "ms": 299,
+      "ms": 422,
       "slow": false,
-      "uptime": 9.9,
+      "uptime": 9.8,
       "historico": [
         {
           "t": "2026-10-07T01:47:36.545Z",
@@ -615,6 +615,11 @@
           "t": "2026-10-31T05:43:07.026Z",
           "up": false,
           "ms": 299
+        },
+        {
+          "t": "2026-10-31T12:32:31.530Z",
+          "up": false,
+          "ms": 422
         }
       ]
     },
@@ -623,9 +628,9 @@
       "url": "https://horda-infinita.netlify.app/baixar.html",
       "up": false,
       "code": 503,
-      "ms": 30,
+      "ms": 108,
       "slow": false,
-      "uptime": 9.9,
+      "uptime": 9.8,
       "historico": [
         {
           "t": "2026-10-07T01:47:36.545Z",
@@ -1231,6 +1236,11 @@
           "t": "2026-10-31T05:43:07.026Z",
           "up": false,
           "ms": 30
+        },
+        {
+          "t": "2026-10-31T12:32:31.530Z",
+          "up": false,
+          "ms": 108
         }
       ]
     },
@@ -1239,7 +1249,7 @@
       "url": "https://github.com/srlorenzos/horda-infinita",
       "up": true,
       "code": 200,
-      "ms": 599,
+      "ms": 590,
       "slow": false,
       "uptime": 100,
       "historico": [
@@ -1847,6 +1857,11 @@
           "t": "2026-10-31T05:43:07.026Z",
           "up": true,
           "ms": 599
+        },
+        {
+          "t": "2026-10-31T12:32:31.530Z",
+          "up": true,
+          "ms": 590
         }
       ]
     },
@@ -1855,7 +1870,7 @@
       "url": "https://github.com/",
       "up": true,
       "code": 200,
-      "ms": 18,
+      "ms": 108,
       "slow": false,
       "uptime": 100,
       "historico": [
@@ -2463,6 +2478,11 @@
           "t": "2026-10-31T05:43:07.026Z",
           "up": true,
           "ms": 18
+        },
+        {
+          "t": "2026-10-31T12:32:31.530Z",
+          "up": true,
+          "ms": 108
         }
       ]
     }
