@@ -1,15 +1,15 @@
 {
-  "atualizado": "2026-11-05T21:59:35.930Z",
-  "todosNoAr": false,
+  "atualizado": "2026-11-06T02:27:19.911Z",
+  "todosNoAr": true,
   "sites": [
     {
       "nome": "Horda Infinita (jogo)",
       "url": "https://horda-infinita.netlify.app/",
-      "up": false,
-      "code": 503,
-      "ms": 564,
+      "up": true,
+      "code": 200,
+      "ms": 776,
       "slow": false,
-      "uptime": 8.5,
+      "uptime": 9.1,
       "historico": [
         {
           "t": "2026-10-07T01:47:36.545Z",
@@ -720,17 +720,22 @@
           "t": "2026-11-05T21:59:35.930Z",
           "up": false,
           "ms": 564
+        },
+        {
+          "t": "2026-11-06T02:27:19.911Z",
+          "up": true,
+          "ms": 776
         }
       ]
     },
     {
       "nome": "Horda Infinita (downloads)",
       "url": "https://horda-infinita.netlify.app/baixar.html",
-      "up": false,
-      "code": 503,
-      "ms": 104,
+      "up": true,
+      "code": 200,
+      "ms": 176,
       "slow": false,
-      "uptime": 8.5,
+      "uptime": 9.1,
       "historico": [
         {
           "t": "2026-10-07T01:47:36.545Z",
@@ -1441,6 +1446,11 @@
           "t": "2026-11-05T21:59:35.930Z",
           "up": false,
           "ms": 104
+        },
+        {
+          "t": "2026-11-06T02:27:19.911Z",
+          "up": true,
+          "ms": 176
         }
       ]
     },
@@ -1449,7 +1459,7 @@
       "url": "https://github.com/srlorenzos/horda-infinita",
       "up": true,
       "code": 200,
-      "ms": 722,
+      "ms": 581,
       "slow": false,
       "uptime": 100,
       "historico": [
@@ -2162,6 +2172,11 @@
           "t": "2026-11-05T21:59:35.930Z",
           "up": true,
           "ms": 722
+        },
+        {
+          "t": "2026-11-06T02:27:19.911Z",
+          "up": true,
+          "ms": 581
         }
       ]
     },
@@ -2170,7 +2185,7 @@
       "url": "https://github.com/",
       "up": true,
       "code": 200,
-      "ms": 207,
+      "ms": 26,
       "slow": false,
       "uptime": 100,
       "historico": [
@@ -2883,6 +2898,11 @@
           "t": "2026-11-05T21:59:35.930Z",
           "up": true,
           "ms": 207
+        },
+        {
+          "t": "2026-11-06T02:27:19.911Z",
+          "up": true,
+          "ms": 26
         }
       ]
     }
