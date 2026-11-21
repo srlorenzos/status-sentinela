@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-21T17:34:00.622Z",
+  "atualizado": "2026-11-21T23:17:48.690Z",
   "todosNoAr": true,
   "sites": [
     {
@@ -7,15 +7,10 @@
       "url": "https://horda-infinita.netlify.app/",
       "up": true,
       "code": 200,
-      "ms": 448,
+      "ms": 332,
       "slow": false,
-      "uptime": 32.7,
+      "uptime": 33.3,
       "historico": [
-        {
-          "t": "2026-10-13T21:16:02.265Z",
-          "up": false,
-          "ms": 262
-        },
         {
           "t": "2026-10-14T00:21:30.148Z",
           "up": false,
@@ -850,6 +845,11 @@
           "t": "2026-11-21T17:34:00.622Z",
           "up": true,
           "ms": 448
+        },
+        {
+          "t": "2026-11-21T23:17:48.690Z",
+          "up": true,
+          "ms": 332
         }
       ]
     },
@@ -858,15 +858,10 @@
       "url": "https://horda-infinita.netlify.app/baixar.html",
       "up": true,
       "code": 200,
-      "ms": 222,
+      "ms": 170,
       "slow": false,
-      "uptime": 32.7,
+      "uptime": 33.3,
       "historico": [
-        {
-          "t": "2026-10-13T21:16:02.265Z",
-          "up": false,
-          "ms": 99
-        },
         {
           "t": "2026-10-14T00:21:30.148Z",
           "up": false,
@@ -1701,6 +1696,11 @@
           "t": "2026-11-21T17:34:00.622Z",
           "up": true,
           "ms": 222
+        },
+        {
+          "t": "2026-11-21T23:17:48.690Z",
+          "up": true,
+          "ms": 170
         }
       ]
     },
@@ -1709,15 +1709,10 @@
       "url": "https://github.com/srlorenzos/horda-infinita",
       "up": true,
       "code": 200,
-      "ms": 637,
+      "ms": 514,
       "slow": false,
       "uptime": 100,
       "historico": [
-        {
-          "t": "2026-10-13T21:16:02.265Z",
-          "up": true,
-          "ms": 1111
-        },
         {
           "t": "2026-10-14T00:21:30.148Z",
           "up": true,
@@ -2552,6 +2547,11 @@
           "t": "2026-11-21T17:34:00.622Z",
           "up": true,
           "ms": 637
+        },
+        {
+          "t": "2026-11-21T23:17:48.690Z",
+          "up": true,
+          "ms": 514
         }
       ]
     },
@@ -2560,15 +2560,10 @@
       "url": "https://github.com/",
       "up": true,
       "code": 200,
-      "ms": 106,
+      "ms": 26,
       "slow": false,
       "uptime": 100,
       "historico": [
-        {
-          "t": "2026-10-13T21:16:02.265Z",
-          "up": true,
-          "ms": 164
-        },
         {
           "t": "2026-10-14T00:21:30.148Z",
           "up": true,
@@ -3403,6 +3398,11 @@
           "t": "2026-11-21T17:34:00.622Z",
           "up": true,
           "ms": 106
+        },
+        {
+          "t": "2026-11-21T23:17:48.690Z",
+          "up": true,
+          "ms": 26
         }
       ]
     }
